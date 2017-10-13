@@ -1,0 +1,12 @@
+FROM mysql:5.7
+
+# Set timezone
+RUN echo "America/Los_Angeles" | tee /etc/timezone && dpkg-reconfigure --frontend noninteractive tzdata
+
+RUN apt-get install -y vim
+
+# Mysql config
+RUN echo ""                                                 >> /etc/mysql/conf.d/aaa.cnf
+RUN echo "[mysqld]"                                         >> /etc/mysql/conf.d/aaa.cnf
+RUN echo "general_log = on"                                 >> /etc/mysql/conf.d/aaa.cnf
+RUN echo "general_log_file=/var/log/mysql/general.log"      >> /etc/mysql/conf.d/aaa.cnf
