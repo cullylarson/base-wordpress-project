@@ -109,6 +109,6 @@ npm run build
 
 ## Misc
 
-The project includes an ESLint for for Javascript. You don't need to use it. If you remove it, remove the eslint-loader from the webpack file.
+The project includes an ESLint file for Javascript. You don't need to use it. If you remove it, remove the eslint-loader from the webpack file.
 
 The `npm run watch` script will run a PHP "linter" as well. This will show you static-analysis errors in your code. It's kinda useful.
