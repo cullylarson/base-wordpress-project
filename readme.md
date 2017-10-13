@@ -78,6 +78,10 @@ CSS is compiled using PostCSS and some processors. It allows you to use: imports
 
 Put your css files in `/css`. The build script will load `/css/main.css`, so if you want to have more than one css file, then import them in `/css/main.css`.
 
+## Images
+
+The build script has task for processing images. Put your images in `/assets/images` if you want the task to be run on them. They will be output in `/theme/build/images`.
+
 ## Javascript
 
 Javascript is compiled using Webpack. Put your Javascript in `/js`. Webpack will load `/js/main.js`, so if you want to have more than on JS file, then import them in `/js/main.js`.
