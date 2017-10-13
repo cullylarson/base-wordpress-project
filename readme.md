@@ -39,6 +39,10 @@ docker exec -it project_name_www bash
 
 This is useful to access database logs, etc.
 
+### Mounted Folders
+
+You can see the folders mounted by Docker in `docker-compose.yml`. Basically the `theme` folder is mounted in the container's Wordpress `wp-content/themes` folder, the database files are mounted locally in `.data/db`, and the Wordpress install is mounted locally in `/.www`.
+
 ## Email
 
 The `www` Docker container traps all outgoing email and delivers it to the `root` user's mailbox. This is useful because it prevents emails from accidently getting into the real world and also because it allows you to see those emails, no matter what the destinatio email address was. To read them, get into the `www` container and run the `mutt` command:
