@@ -3,6 +3,8 @@ FROM mysql:5.7
 # Set timezone
 RUN echo "America/Los_Angeles" | tee /etc/timezone && dpkg-reconfigure --frontend noninteractive tzdata
 
+RUN apt-get update
+
 RUN apt-get install -y vim
 
 # Mysql config
