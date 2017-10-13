@@ -1,10 +1,12 @@
 # Base Wordpress Project
 
-> The skeleton for a Wordpress project. Includes Docker a dev environment, automated build scripts, and some useful theme files.
+> The skeleton for a Wordpress project. Includes a Docker dev environment, automated build scripts, and some useful theme files.
 
 The dev environment runs as two Docker containers (`www` and `db`). They are managed by Docker Compose. If you have Docker installed, you'll have Docker Compose as well.
 
-You'll need to go through all the files and change any instances `project_name` or something like that to your actual project name.
+You'll need to go through all the files and change any instances of `project_name` or something like that to your actual project name.
+
+Also, the package versions in `package.json` will likely be outdated. Make sure to install newer versions (e.g. by clearing the dependencies list and manually re-installing all of the packages)
 
 ## Docker
 
@@ -45,7 +47,7 @@ You can see the folders mounted by Docker in `docker-compose.yml`. Basically the
 
 ## Email
 
-The `www` Docker container traps all outgoing email and delivers it to the `root` user's mailbox. This is useful because it prevents emails from accidently getting into the real world and also because it allows you to see those emails, no matter what the destinatio email address was. To read them, get into the `www` container and run the `mutt` command:
+The `www` Docker container traps all outgoing email and delivers it to the `root` user's mailbox. This is useful because it prevents emails from accidently getting into the real world and also because it allows you to see those emails, no matter what the destination email address was. To read them, get into the `www` container and run the `mutt` command:
 
 ```
 docker exec -it project_name_www bash
@@ -55,7 +57,7 @@ mutt
 
 ## Wordpress
 
-To make Wordpress work with, you just need to add these lines to your `wp-config.php` file:
+To make Wordpress work with Docker, you just need to add these lines to your `wp-config.php` file:
 
 ```
 define('DB_NAME', 'wordpress');
@@ -66,7 +68,7 @@ define('DB_HOST', 'db:3306');
 
 ## Theme
 
-The theme folder just has some essential files in it.  It isn't a complete theme.
+The theme folder just has some essential files in it.  It isn't a complete theme, though it will activate.
 
 `functions.php` includes a few files from `lib/setup`. One is `Autoload.php`, which adds an autoloader for composer and for anything namespaced in the project.
 
