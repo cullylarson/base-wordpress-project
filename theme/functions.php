@@ -2,11 +2,11 @@
 
 call_user_func( function() {
     $setupScripts = [
-        '/lib/setup/Autoload.php',
-        '/lib/setup/LayoutWrapper.php',
-        '/lib/setup/Assets.php',
+        __DIR__ . '/lib/setup/Autoload.php',
+        __DIR__ . '/lib/setup/LayoutWrapper.php',
+        __DIR__ . '/lib/setup/Assets.php',
     ];
-    foreach ( $setupScripts as $setupScript ) {
-        require_once locate_template( $setupScript );
+    foreach($setupScripts as $setupScript) {
+        include_once($setupScript);
     }
 });
