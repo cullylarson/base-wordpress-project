@@ -6,7 +6,7 @@ The dev environment runs as two Docker containers (`www` and `db`). They are man
 
 You'll need to go through all the files and change any instances of `project_name` or something like that to your actual project name.
 
-Also, the package versions in `package.json` will likely be outdated. Make sure to install newer versions (e.g. by clearing the dependencies list and manually re-installing all of the packages)
+Also, the package versions in `package.json` will likely be outdated. Make sure to install newer versions (e.g. by clearing the dependencies list and manually re-installing all of the packages). [npm-check-updates](https://www.npmjs.com/package/npm-check-updates) is a nice tool for identifying outdated packages.
 
 ## Docker
 
@@ -57,7 +57,7 @@ mutt
 
 ## Wordpress
 
-To make Wordpress work with Docker, you just need to add these lines to your `wp-config.php` file:
+To make Wordpress work with Docker, you might need to add these lines to your `wp-config.php` file, if the Docker build doesn't do it for you:
 
 ```
 define('DB_NAME', 'wordpress');
